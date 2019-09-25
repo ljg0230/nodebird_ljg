@@ -112,7 +112,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "D:\\git\\react_nodebird\\nodebird_ljg\\frontend\\components\\AppLayout.js";
+var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\components\\AppLayout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -277,7 +277,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_signup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/signup */ "./pages/signup.js");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "D:\\git\\react_nodebird\\nodebird_ljg\\frontend\\components\\LoginForm.js";
+var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\components\\LoginForm.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -420,7 +420,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "D:\\git\\react_nodebird\\nodebird_ljg\\frontend\\components\\UserProfile.js";
+var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\components\\UserProfile.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -555,6 +555,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-prope
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-symbols */ "core-js/library/fn/object/get-own-property-symbols");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js":
 /*!********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/keys.js ***!
@@ -574,6 +585,79 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "core
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectSpread; });
+/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _defineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+
+
+
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    var ownKeys = _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default()(source);
+
+    if (typeof _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default.a === 'function') {
+      ownKeys = ownKeys.concat(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default()(source).filter(function (sym) {
+        return _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default()(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      Object(_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
 
 /***/ }),
 
@@ -2211,27 +2295,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.js");
-var _jsxFileName = "D:\\git\\react_nodebird\\nodebird_ljg\\frontend\\pages\\_app.js";
+/* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next-redux-wrapper */ "next-redux-wrapper");
+/* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! redux */ "redux");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
+var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\pages\\_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
 
+
+
+
+
 const NodeBird = ({
-  Component
+  Component,
+  store
 }) => {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  return __jsx(react_redux__WEBPACK_IMPORTED_MODULE_5__["Provider"], {
+    store: store,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 12
+    },
+    __self: undefined
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
     },
     __self: undefined
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 14
     },
     __self: undefined
   }, "NodeBird"), __jsx("link", {
@@ -2239,28 +2342,38 @@ const NodeBird = ({
     href: "https://cdnjs.cloudflare.com/ajax/libs/antd/3.23.3/antd.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 15
     },
     __self: undefined
-  })), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  })), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 20
     },
     __self: undefined
   }, __jsx(Component, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 21
     },
     __self: undefined
   })));
 };
 
 NodeBird.propTypes = {
-  Component: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.elementType
+  Component: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.elementType,
+  store: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object
 };
-/* harmony default export */ __webpack_exports__["default"] = (NodeBird);
+/* harmony default export */ __webpack_exports__["default"] = (next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default()((initialState, options) => {
+  //store를 props로 넘겨주기 위해 고차컴포넌트를 사용해서 확장한다
+  //이 형식은 대부분 이렇게 쓰이므로 외워서 사용하는게 좋을 듯 싶다
+  const middlewares = []; // 다른 미들웨어를 추가하더라도 이 부분만 바뀐다
+
+  const enhancer = Object(redux__WEBPACK_IMPORTED_MODULE_6__["compose"])(Object(redux__WEBPACK_IMPORTED_MODULE_6__["applyMiddleware"])(...middlewares), !options.isServer && window.__REDUX_DEVTOOLS_EXTENSION__ !== "undefined" ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f);
+  const store = Object(redux__WEBPACK_IMPORTED_MODULE_6__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_7__["default"], initialState, enhancer); //여기에다가 store 커스터마이징
+
+  return store;
+})(NodeBird));
 
 /***/ }),
 
@@ -2278,7 +2391,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "D:\\git\\react_nodebird\\nodebird_ljg\\frontend\\pages\\signup.js";
+var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\pages\\signup.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2518,6 +2631,152 @@ const Signup = () => {
 
 /***/ }),
 
+/***/ "./reducers/index.js":
+/*!***************************!*\
+  !*** ./reducers/index.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "redux");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user */ "./reducers/user.js");
+/* harmony import */ var _post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./post */ "./reducers/post.js");
+
+
+
+const rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
+  user: _user__WEBPACK_IMPORTED_MODULE_1__["default"],
+  post: _post__WEBPACK_IMPORTED_MODULE_2__["default"]
+});
+/* harmony default export */ __webpack_exports__["default"] = (rootReducer);
+
+/***/ }),
+
+/***/ "./reducers/post.js":
+/*!**************************!*\
+  !*** ./reducers/post.js ***!
+  \**************************/
+/*! exports provided: initialState, ADD_POST, ADD_DUMMY, addPost, addDummy, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_POST", function() { return ADD_POST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_DUMMY", function() { return ADD_DUMMY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addPost", function() { return addPost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addDummy", function() { return addDummy; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+
+const initialState = {
+  mainPosts: []
+};
+const ADD_POST = 'ADD_POST';
+const ADD_DUMMY = 'ADD_DUMMY';
+const addPost = {
+  type: ADD_POST
+};
+const addDummy = {
+  type: ADD_DUMMY,
+  data: {
+    content: 'Hello',
+    UserId: 1,
+    User: {
+      nickname: '이정걸'
+    }
+  }
+};
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_POST:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
+      }
+
+    case ADD_DUMMY:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          mainPosts: [action.data, ...state.mainPosts]
+        });
+      }
+
+    default:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
+      }
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (reducer);
+
+/***/ }),
+
+/***/ "./reducers/user.js":
+/*!**************************!*\
+  !*** ./reducers/user.js ***!
+  \**************************/
+/*! exports provided: initialState, LOG_IN, LOG_OUT, loginAction, logoutAction, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN", function() { return LOG_IN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT", function() { return LOG_OUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginAction", function() { return loginAction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutAction", function() { return logoutAction; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+
+const initialState = {
+  isLoggedIn: false,
+  user: {}
+};
+const LOG_IN = "LOG_IN"; //액션의 이름
+
+const LOG_OUT = "LOG_OUT";
+const loginAction = {
+  type: LOG_IN,
+  data: {
+    nickname: "이정걸"
+  }
+};
+const logoutAction = {
+  type: LOG_OUT
+};
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case LOG_IN:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          isLoggedIn: true,
+          user: action.data
+        });
+      }
+
+    case LOG_OUT:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          isLoggedIn: false,
+          user: null
+        });
+      }
+
+    default:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
+      }
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (reducer);
+
+/***/ }),
+
 /***/ 0:
 /*!****************************************!*\
   !*** multi private-next-pages/_app.js ***!
@@ -2596,6 +2855,17 @@ module.exports = require("core-js/library/fn/object/get-own-property-descriptor"
 
 /***/ }),
 
+/***/ "core-js/library/fn/object/get-own-property-symbols":
+/*!*********************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-symbols" ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-symbols");
+
+/***/ }),
+
 /***/ "core-js/library/fn/object/keys":
 /*!*************************************************!*\
   !*** external "core-js/library/fn/object/keys" ***!
@@ -2615,6 +2885,17 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "next-redux-wrapper":
+/*!*************************************!*\
+  !*** external "next-redux-wrapper" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-redux-wrapper");
 
 /***/ }),
 
@@ -2670,6 +2951,28 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "react-redux":
+/*!******************************!*\
+  !*** external "react-redux" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
+
+/***/ }),
+
+/***/ "redux":
+/*!************************!*\
+  !*** external "redux" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
 
 /***/ }),
 
