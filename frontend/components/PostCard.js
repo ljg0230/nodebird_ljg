@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 const PostCard = ({ post }) => {
     return (
       <Card
+        style={{ marginTop: '10px' }}
         key={+post.createdAt}
         cover={post.img && <img alt="example" src={post.img} />}
         actions={[

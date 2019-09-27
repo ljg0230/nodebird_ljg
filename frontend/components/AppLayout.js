@@ -3,17 +3,11 @@ import Link from "next/link";
 import LoginForm from "./LoginForm";
 import UserProfile from "./UserProfile";
 import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 import { Menu, Input, Row, Col } from "antd";
 
-const dummy = {
-  nickname: "이정걸",
-  Post: [],
-  Followings: [],
-  Followers: [],
-  isLoggedIn: false
-};
-
 const AppLayout = ({ children }) => {
+  const { isLoggedIn } = useSelector(state => state.user);
   return (
     <div>
       <Menu mode="horizontal">
@@ -33,7 +27,7 @@ const AppLayout = ({ children }) => {
       </Menu>
       <Row gutter={8}>
         <Col xs={24} md={6}>
-          {dummy.isLoggedIn ? (
+          {isLoggedIn ? (
             <UserProfile />
           ) : (
             <LoginForm></LoginForm>

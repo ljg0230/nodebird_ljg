@@ -1,5 +1,18 @@
 import React, { useState, useCallback } from "react";
 import { Form, Input, Checkbox, Button } from "antd";
+import { useDispatch } from 'react-redux';
+import { signUpAction } from "../reducers/user";
+import PropTypes from 'prop-types';
+
+const TextInput = ({ value }) => {
+  return (
+    <div>{value}</div>
+  )
+};
+
+TextInput.propTypes = {
+  value: PropTypes.string,
+}
 
 export const useInput = (initValue = null) => {
   // 커스텀 hook으로 중복되는 내용을 줄임
@@ -19,6 +32,7 @@ const Signup = () => {
   const [id, onChangeId] = useInput("");
   const [nick, onChangeNick] = useInput("");
   const [password, onChangePassword] = useInput("");
+  const dispatch = useDispatch();
 
   const onSubmit = useCallback(
     e => {
@@ -29,6 +43,11 @@ const Signup = () => {
       if (!term) {
         return setTermError(true);
       }
+      dispatch(signUpAction({
+        id,
+        password,
+        nick,
+      }))
     },
     [password, passwordCheck, term]
   );
