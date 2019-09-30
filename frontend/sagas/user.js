@@ -8,7 +8,8 @@ function loginAPI() {
 
 function* login() {
   try {
-    yield call(loginAPI); // 함수 동기적 호출
+    //yield call(loginAPI); // 함수 동기적 호출
+    yield delay(2000);
     yield put({
       // put은 dispatch와 동일
       type: LOG_IN_SUCCESS
@@ -33,7 +34,8 @@ function signUpAPI() {
 
 function* signUp() {
   try {
-    yield call(signUpAPI); // 함수 동기적 호출
+    //yield call(signUpAPI); // 함수 동기적 호출
+    yield delay(2000);
     yield put({
       // put은 dispatch와 동일
       type: SIGN_UP_SUCCESS
