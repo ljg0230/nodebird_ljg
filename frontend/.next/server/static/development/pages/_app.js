@@ -2315,13 +2315,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next-redux-wrapper */ "next-redux-wrapper");
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! redux */ "redux");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! redux-saga */ "redux-saga");
-/* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(redux_saga__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux */ "redux");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! redux-saga */ "redux-saga");
+/* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(redux_saga__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.js");
 /* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
 /* harmony import */ var _sagas__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../sagas */ "./sagas/index.js");
 var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\pages\\_app.js";
@@ -2341,7 +2341,7 @@ const NodeBird = ({
   Component,
   store
 }) => {
-  return __jsx(react_redux__WEBPACK_IMPORTED_MODULE_5__["Provider"], {
+  return __jsx(react_redux__WEBPACK_IMPORTED_MODULE_4__["Provider"], {
     store: store,
     __source: {
       fileName: _jsxFileName,
@@ -2368,7 +2368,7 @@ const NodeBird = ({
       lineNumber: 17
     },
     __self: undefined
-  })), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  })), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 22
@@ -2384,21 +2384,24 @@ const NodeBird = ({
 };
 
 NodeBird.propTypes = {
-  Component: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.elementType,
-  store: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object
+  Component: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.elementType.isRequired,
+  store: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired
 };
-/* harmony default export */ __webpack_exports__["default"] = (next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default()((initialState, options) => {
+
+const configureStore = (initialState, options) => {
   //store를 props로 넘겨주기 위해 고차컴포넌트를 사용해서 확장한다
   //이 형식은 대부분 이렇게 쓰이므로 외워서 사용하는게 좋을 듯 싶다
-  const sagaMiddleware = redux_saga__WEBPACK_IMPORTED_MODULE_7___default()();
+  const sagaMiddleware = redux_saga__WEBPACK_IMPORTED_MODULE_6___default()();
   const middlewares = [sagaMiddleware]; // 다른 미들웨어를 추가하더라도 이 부분만 바뀐다
 
-  const enhancer =  false ? undefined : Object(redux__WEBPACK_IMPORTED_MODULE_6__["compose"])(Object(redux__WEBPACK_IMPORTED_MODULE_6__["applyMiddleware"])(...middlewares), !options.isServer && window.__REDUX_DEVTOOLS_EXTENSION__ !== "undefined" ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f);
-  const store = Object(redux__WEBPACK_IMPORTED_MODULE_6__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_8__["default"], initialState, enhancer); //여기에다가 store 커스터마이징
+  const enhancer =  false ? undefined : Object(redux__WEBPACK_IMPORTED_MODULE_5__["compose"])(Object(redux__WEBPACK_IMPORTED_MODULE_5__["applyMiddleware"])(...middlewares), !options.isServer && window.__REDUX_DEVTOOLS_EXTENSION__ !== "undefined" ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f);
+  const store = Object(redux__WEBPACK_IMPORTED_MODULE_5__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_8__["default"], initialState, enhancer); //여기에다가 store 커스터마이징
 
   sagaMiddleware.run(_sagas__WEBPACK_IMPORTED_MODULE_9__["default"]);
   return store;
-})(NodeBird));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (next_redux_wrapper__WEBPACK_IMPORTED_MODULE_3___default()(configureStore)(NodeBird));
 
 /***/ }),
 
@@ -2783,18 +2786,21 @@ const reducer = (state = initialState, action) => {
 /*!**************************!*\
   !*** ./reducers/user.js ***!
   \**************************/
-/*! exports provided: initialState, SIGN_UP, SIGN_UP_SUCCESS, LOG_IN, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOG_OUT, signUpAction, signUpSuccess, loginAction, logoutAction, default */
+/*! exports provided: initialState, SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, LOG_OUT_REQUEST, LOG_OUT_SUCCESS, LOG_OUT_FAILURE, signUpAction, signUpSuccess, loginAction, logoutAction, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP", function() { return SIGN_UP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_REQUEST", function() { return SIGN_UP_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_SUCCESS", function() { return SIGN_UP_SUCCESS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN", function() { return LOG_IN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP_FAILURE", function() { return SIGN_UP_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_REQUEST", function() { return LOG_IN_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_SUCCESS", function() { return LOG_IN_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN_FAILURE", function() { return LOG_IN_FAILURE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT", function() { return LOG_OUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT_REQUEST", function() { return LOG_OUT_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT_SUCCESS", function() { return LOG_OUT_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT_FAILURE", function() { return LOG_OUT_FAILURE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signUpAction", function() { return signUpAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signUpSuccess", function() { return signUpSuccess; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginAction", function() { return loginAction; });
@@ -2813,12 +2819,15 @@ const initialState = {
   user: null
 }; //액션의 이름
 
-const SIGN_UP = "SIGN_UP";
+const SIGN_UP_REQUEST = "SIGN_UP_REQUEST";
 const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
-const LOG_IN = "LOG_IN";
+const SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
+const LOG_IN_REQUEST = "LOG_IN_REQUEST";
 const LOG_IN_SUCCESS = "LOG_IN_SUCCESS";
 const LOG_IN_FAILURE = "LOG_IN_FAILURE";
-const LOG_OUT = "LOG_OUT";
+const LOG_OUT_REQUEST = "LOG_OUT_REQUEST";
+const LOG_OUT_SUCCESS = "LOG_OUT_SUCCESS";
+const LOG_OUT_FAILURE = "LOG_OUT_FAILURE";
 const signUpAction = data => {
   // 동적 데이터 처리를 위해 함수로 만든다
   return {
@@ -2829,24 +2838,34 @@ const signUpAction = data => {
 const signUpSuccess = {
   type: SIGN_UP_SUCCESS
 };
-const loginAction = {
-  type: LOG_IN
-};
+const loginAction = data => ({
+  type: LOG_IN_REQUEST,
+  data
+});
 const logoutAction = {
-  type: LOG_OUT
+  type: LOG_OUT_REQUEST
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOG_IN:
+    case LOG_IN_REQUEST:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
-          isLoggedIn: true,
-          user: dummyUser
+          loginData: action.data,
+          isLoading: true
         });
       }
 
-    case LOG_OUT:
+    case LOG_IN_SUCCESS:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          isLoggedIn: true,
+          user: dummyUser,
+          isLoading: false
+        });
+      }
+
+    case LOG_OUT_REQUEST:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           isLoggedIn: false,
@@ -2854,7 +2873,7 @@ const reducer = (state = initialState, action) => {
         });
       }
 
-    case SIGN_UP:
+    case SIGN_UP_REQUEST:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           signUpData: action.data
@@ -2953,17 +2972,13 @@ function* login() {
 
 function* watchLogin() {
   // 로그인 액션이 실행되면 중단점이 풀리고 로그인 성공 액션을 실행한다
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["take"])(_reducers_user__WEBPACK_IMPORTED_MODULE_1__["LOG_IN"]);
-  Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-    type: _reducers_user__WEBPACK_IMPORTED_MODULE_1__["LOG_IN_SUCCESS"]
-  });
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_1__["LOG_IN_REQUEST"], login);
 }
 
 function* userSaga() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([watchLogin() // 함수 비동기적 호출
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchLogin) // 함수 비동기적 호출
   ]);
 }
-;
 
 /***/ }),
 

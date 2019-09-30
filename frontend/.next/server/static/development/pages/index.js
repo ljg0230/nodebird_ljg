@@ -363,13 +363,13 @@ const Home = () => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 15
     },
     __self: undefined
   }, isLoggedIn && __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 16
     },
     __self: undefined
   }), mainPosts.map(c => {
@@ -378,7 +378,7 @@ const Home = () => {
       post: c,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 18
       },
       __self: undefined
     });
