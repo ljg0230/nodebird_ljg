@@ -36,6 +36,7 @@ function* signUp() {
   try {
     //yield call(signUpAPI); // 함수 동기적 호출
     yield delay(2000);
+    //throw new Error('에러에러');
     yield put({
       // put은 dispatch와 동일
       type: SIGN_UP_SUCCESS
@@ -43,7 +44,8 @@ function* signUp() {
   } catch (e) {
     console.error(e);
     yield put({
-      type: SIGN_UP_FAILURE
+      type: SIGN_UP_FAILURE,
+      error: e,
     });
   }
 }

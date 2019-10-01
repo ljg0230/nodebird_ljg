@@ -114,7 +114,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "D:\\git\\react_nodebird\\nodebird_ljg\\frontend\\components\\AppLayout.js";
+var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\components\\AppLayout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -279,7 +279,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-var _jsxFileName = "D:\\git\\react_nodebird\\nodebird_ljg\\frontend\\components\\LoginForm.js";
+var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\components\\LoginForm.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -434,7 +434,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-var _jsxFileName = "D:\\git\\react_nodebird\\nodebird_ljg\\frontend\\components\\UserProfile.js";
+var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\components\\UserProfile.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2333,7 +2333,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.js");
 /* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
 /* harmony import */ var _sagas__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../sagas */ "./sagas/index.js");
-var _jsxFileName = "D:\\git\\react_nodebird\\nodebird_ljg\\frontend\\pages\\_app.js";
+var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\pages\\_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2433,7 +2433,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "D:\\git\\react_nodebird\\nodebird_ljg\\frontend\\pages\\signup.js";
+var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\pages\\signup.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2489,6 +2489,9 @@ const Signup = () => {
   const [nick, onChangeNick] = useInput("");
   const [password, onChangePassword] = useInput("");
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
+  const {
+    isSigningUp
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
   const onSubmit = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     e.preventDefault();
 
@@ -2686,6 +2689,7 @@ const Signup = () => {
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     type: "primary",
+    loading: isSigningUp,
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
@@ -2727,7 +2731,7 @@ const rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
 /*!**************************!*\
   !*** ./reducers/post.js ***!
   \**************************/
-/*! exports provided: initialState, LOAD_MAIN_POST_REQUEST, LOAD_MAIN_POST_SUCCESS, LOAD_MAIN_POST_FAILURE, LOAD_HASHTAG_REQUEST, LOAD_HASHTAG_SUCCESS, LOAD_HASHTAG_FAILURE, LOAD_USER_POSTS_REQUEST, LOAD_USER_POSTS_SUCCESS, LOAD_USER_POSTS_FAILURE, UPLOAD_IMAGES_REQUEST, UPLOAD_IMAGES_SUCCESS, UPLOAD_IMAGES_FAILURE, REMOVE_IMAGE, LIKE_POST_REQUEST, LIKE_POST_SUCCESS, LIKE_POST_FAILURE, UNLIKE_POST_REQUEST, UNLIKE_POST_SUCCESS, UNLIKE_POST_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_COMMENT_FAILURE, LOAD_COMMENT_REQUEST, LOAD_COMMENT_SUCCESS, LOAD_COMMENT_FAILURE, RETWEET_REQUEST, RETWEET_SUCCESS, RETWEET_FAILURE, REMOVE_POST_REQUEST, REMOVE_POST_SUCCESS, REMOVE_POST_FAILURE, default */
+/*! exports provided: initialState, LOAD_MAIN_POST_REQUEST, LOAD_MAIN_POST_SUCCESS, LOAD_MAIN_POST_FAILURE, LOAD_HASHTAG_REQUEST, LOAD_HASHTAG_SUCCESS, LOAD_HASHTAG_FAILURE, LOAD_USER_POSTS_REQUEST, LOAD_USER_POSTS_SUCCESS, LOAD_USER_POSTS_FAILURE, UPLOAD_IMAGES_REQUEST, UPLOAD_IMAGES_SUCCESS, UPLOAD_IMAGES_FAILURE, REMOVE_IMAGE, ADD_POST_REQUEST, ADD_POST_SUCCESS, ADD_POST_FAILURE, LIKE_POST_REQUEST, LIKE_POST_SUCCESS, LIKE_POST_FAILURE, UNLIKE_POST_REQUEST, UNLIKE_POST_SUCCESS, UNLIKE_POST_FAILURE, ADD_COMMENT_REQUEST, ADD_COMMENT_SUCCESS, ADD_COMMENT_FAILURE, LOAD_COMMENT_REQUEST, LOAD_COMMENT_SUCCESS, LOAD_COMMENT_FAILURE, RETWEET_REQUEST, RETWEET_SUCCESS, RETWEET_FAILURE, REMOVE_POST_REQUEST, REMOVE_POST_SUCCESS, REMOVE_POST_FAILURE, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2746,6 +2750,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPLOAD_IMAGES_SUCCESS", function() { return UPLOAD_IMAGES_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPLOAD_IMAGES_FAILURE", function() { return UPLOAD_IMAGES_FAILURE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_IMAGE", function() { return REMOVE_IMAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_POST_REQUEST", function() { return ADD_POST_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_POST_SUCCESS", function() { return ADD_POST_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_POST_FAILURE", function() { return ADD_POST_FAILURE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LIKE_POST_REQUEST", function() { return LIKE_POST_REQUEST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LIKE_POST_SUCCESS", function() { return LIKE_POST_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LIKE_POST_FAILURE", function() { return LIKE_POST_FAILURE; });
@@ -2768,6 +2775,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const initialState = {
   mainPosts: [{
+    id: 1,
     User: {
       id: 1,
       nickname: "이정걸"
@@ -2780,8 +2788,18 @@ const initialState = {
   // 미리보기 이미지 경로
   addPostErrorReason: false,
   // 포스트 업로드 실패 사유
-  isAddingPost: false // 포스트 업로드 중
+  isAddingPost: false,
+  // 포스트 업로드 중
+  postAdded: false // 포스트 업로드 성공
 
+};
+const dummyPost = {
+  id: 2,
+  User: {
+    id: 1,
+    nickname: "이정걸"
+  },
+  content: "Im dummy!"
 };
 const LOAD_MAIN_POST_REQUEST = "LOAD_MAIN_POST_REQUEST";
 const LOAD_MAIN_POST_SUCCESS = "LOAD_MAIN_POST_SUCCESS";
@@ -2795,7 +2813,7 @@ const LOAD_USER_POSTS_FAILURE = "LOAD_USER_POSTS_FAILURE";
 const UPLOAD_IMAGES_REQUEST = "UPLOAD_IMAGES_REQUEST";
 const UPLOAD_IMAGES_SUCCESS = "UPLOAD_IMAGES_SUCCESS";
 const UPLOAD_IMAGES_FAILURE = "UPLOAD_IMAGES_FAILURE";
-const REMOVE_IMAGE = 'REMOVE_IMAGE';
+const REMOVE_IMAGE = "REMOVE_IMAGE";
 const ADD_POST_REQUEST = "ADD_POST_REQUEST";
 const ADD_POST_SUCCESS = "ADD_POST_SUCCESS";
 const ADD_POST_FAILURE = "ADD_POST_FAILURE";
@@ -2817,34 +2835,34 @@ const RETWEET_FAILURE = "RETWEET_FAILURE";
 const REMOVE_POST_REQUEST = "REMOVE_POST_REQUEST";
 const REMOVE_POST_SUCCESS = "REMOVE_POST_SUCCESS";
 const REMOVE_POST_FAILURE = "REMOVE_POST_FAILURE";
-/* export const addPost = {
-  type: ADD_POST
-};
-
-export const addDummy = {
-  type: ADD_DUMMY,
-  data: {
-    content: "Hello",
-    UserId: 1,
-    User: {
-      nickname: "이정걸"
-    }
-  }
-}; */
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST_REQUEST:
       {
-        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          isAddingPost: true,
+          addPostErrorReason: "",
+          postAdded: false
+        });
       }
 
-    /*     case ADD_DUMMY: {
-          return {
-            ...state,
-            mainPosts: [action.data, ...state.mainPosts]
-          };
-        } */
+    case ADD_POST_SUCCESS:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          isAddingPost: false,
+          mainPost: [dummyPost, ...state.mainPosts],
+          postAdded: true
+        });
+      }
+
+    case ADD_POST_FAILURE:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          isAddingPost: false,
+          addPostErrorReason: action.error
+        });
+      }
 
     default:
       {
@@ -2914,10 +2932,10 @@ const initialState = {
   //로그인 시도중
   logInErrorReason: '',
   //로그인 에러 사유
-  signedUp: false,
-  // 회원가입 성공
   isSigningUp: false,
   // 회원가입 시도중
+  isSignedUp: false,
+  // 회원가입 성공
   signUpErrorReason: '',
   // 회원가입 실패 사유
   me: null,
@@ -2979,7 +2997,7 @@ const reducer = (state = initialState, action) => {
           isLoggingIn: true,
           loginData: action.data,
           isLoading: true,
-          logInErrorReason: ''
+          logInErrorReason: ""
         });
       }
 
@@ -3014,7 +3032,25 @@ const reducer = (state = initialState, action) => {
     case SIGN_UP_REQUEST:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
-          signUpData: action.data
+          isSigningUp: true,
+          isSignedUp: false,
+          signUpErrorReason: ''
+        });
+      }
+
+    case SIGN_UP_SUCCESS:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          isSigningUp: false,
+          isSignedUp: true
+        });
+      }
+
+    case SIGN_UP_FAILURE:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          isSigningUp: false,
+          signUpErrorReason: action.error
         });
       }
 
@@ -3065,9 +3101,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return postSaga; });
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux-saga/effects */ "redux-saga/effects");
 /* harmony import */ var redux_saga_effects__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
+
+
+
+function* addPost() {
+  try {
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["delay"])(2000);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_POST_SUCCESS"]
+    });
+  } catch (e) {
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_POST_FAILURE"],
+      error: e
+    });
+  }
+}
+
+function* watchAddPost() {
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_1__["ADD_POST_REQUEST"], addPost);
+}
 
 function* postSaga() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([]);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddPost)]);
 }
 ;
 
@@ -3120,7 +3177,8 @@ function signUpAPI() {// 서버에 요청을 보내는 부분
 function* signUp() {
   try {
     //yield call(signUpAPI); // 함수 동기적 호출
-    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["delay"])(2000);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["delay"])(2000); //throw new Error('에러에러');
+
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
       // put은 dispatch와 동일
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_1__["SIGN_UP_SUCCESS"]
@@ -3128,7 +3186,8 @@ function* signUp() {
   } catch (e) {
     console.error(e);
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
-      type: _reducers_user__WEBPACK_IMPORTED_MODULE_1__["SIGN_UP_FAILURE"]
+      type: _reducers_user__WEBPACK_IMPORTED_MODULE_1__["SIGN_UP_FAILURE"],
+      error: e
     });
   }
 }
