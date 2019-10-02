@@ -11,8 +11,10 @@ const PostForm = () => {
   );
 
   useEffect(() => {
-    setText("");
-  }, [postAdded === true]);
+    if (postAdded) {
+      setText("");
+    }
+  }, [postAdded]);
 
   const onSubmitForm = useCallback(e => {
     //props로 들어가면 callback!
@@ -47,7 +49,7 @@ const PostForm = () => {
         <Button
           type="primary"
           style={{ float: "right" }}
-          Loading={isAddingPost}
+          loading={isAddingPost}
           htmlType="submit"
         >
           짹짹
@@ -57,7 +59,7 @@ const PostForm = () => {
         {imagePaths.map(v => {
           <div key={v} style={{ display: "inline-block" }}>
             <img
-              src={"http://localhost:3000/" + v}
+              src={`http://localhost:3000/${v}`}
               style={{ width: "200px" }}
               alt={v}
             />

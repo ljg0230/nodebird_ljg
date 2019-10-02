@@ -7,13 +7,17 @@ export const initialState = {
         nickname: "이정걸"
       },
       content: "첫 번째 게시글",
-      img: ""
+      img: "",
+      Comments: []
     }
   ], // 화면에 보일 포스트들
   imagePaths: [], // 미리보기 이미지 경로
-  addPostErrorReason: false, // 포스트 업로드 실패 사유
+  addPostErrorReason: "", // 포스트 업로드 실패 사유
   isAddingPost: false, // 포스트 업로드 중
   postAdded: false, // 포스트 업로드 성공
+  isAddingComment: false,
+  addCommentErrorReason: "",
+  commentAdded: false,
 };
 
 const dummyPost = {
@@ -22,7 +26,18 @@ const dummyPost = {
     id: 1,
     nickname: "이정걸"
   },
-  content: "Im dummy!"
+  content: "Im dummy!",
+  Comments: []
+};
+
+const dummyComment = {
+  id: 1,
+  User: {
+    id: 1,
+    nickname: '이정걸걸'
+  },
+  createdAt: new Date(),
+  content: "Dummy Comment!"
 };
 
 export const LOAD_MAIN_POST_REQUEST = "LOAD_MAIN_POST_REQUEST";
@@ -78,15 +93,15 @@ const reducer = (state = initialState, action) => {
         ...state,
         isAddingPost: true,
         addPostErrorReason: "",
-        postAdded: false,
+        postAdded: false
       };
     }
     case ADD_POST_SUCCESS: {
       return {
         ...state,
         isAddingPost: false,
-        mainPost: [dummyPost, ...state.mainPosts],
-        postAdded: true,
+        mainPosts: [dummyPost, ...state.mainPosts],
+        postAdded: true
       };
     }
     case ADD_POST_FAILURE: {
@@ -94,6 +109,36 @@ const reducer = (state = initialState, action) => {
         ...state,
         isAddingPost: false,
         addPostErrorReason: action.error
+      };
+    }
+    case ADD_COMMENT_REQUEST: {
+      return {
+        ...state,
+        isAddingComment: true,
+        addCommentErrorReason: "",
+        commentAdded: false
+      };
+    }
+    case ADD_COMMENT_SUCCESS: {
+      const postIndex = state.mainPosts.findIndex(
+        v => v.id === action.data.postId
+      );
+      const post = state.mainPosts[postIndex];
+      const Comments = [...post.Comments, dummyComment];
+      const mainPosts = [...state.mainPosts];
+      mainPosts[postIndex] = { ...post, Comments };
+      return {
+        ...state,
+        isAddingComment: false,
+        mainPosts,
+        commentAdded: true
+      };
+    }
+    case ADD_COMMENT_FAILURE: {
+      return {
+        ...state,
+        isAddingComment: false,
+        addCommentErrorReason: action.error
       };
     }
     default: {

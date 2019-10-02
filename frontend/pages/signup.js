@@ -1,7 +1,8 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { Form, Input, Checkbox, Button } from "antd";
 import { useDispatch, useSelector } from 'react-redux';
 import { signUpRequestAction } from "../reducers/user";
+import Router from 'next/router';
 import PropTypes from 'prop-types';
 
 const TextInput = ({ value }) => {
@@ -33,7 +34,15 @@ const Signup = () => {
   const [nick, onChangeNick] = useInput("");
   const [password, onChangePassword] = useInput("");
   const dispatch = useDispatch();
-  const { isSigningUp } = useSelector(state => state.user);
+  const { isSigningUp, me } = useSelector(state => state.user);
+
+  useEffect(() => {
+    if(me) {
+      alert('로그인 성공. 메인페이지로 이동합니다.');
+      Router.push('/'); //내 id값이 들어오면(로그인 시) 메인페이지로 이동한다
+    }
+  }, [me && me.id]); //비교의 용이함을 위해 me.id(일반값)를 씀, js는 항상 undefined 일 수 있으므로 && (가드)를 해준다
+
   const onSubmit = useCallback(
     e => {
       e.preventDefault();
