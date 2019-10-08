@@ -1,5 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
+const passport = require('passport');
 const db = require('../models');
 
 const router = express.Router();
@@ -29,7 +30,7 @@ router.post("/", async(req, res, next) => { // POST /api/user 회원가입
     } catch (e) {
         console.error(e);
         // 에러 처리는 여기서
-        return next(e); // 알아서 front 에 에러가 생김을 알림. 이방법만 사용하면 에러처리가 안되므로 최후의 방법으로..
+        return next(e); // 알아서 front 에 에러가 생김을 알림. 이 방법만 사용하면 에러처리가 안되므로 처리 후 마지막에..
     }
 });
 router.get("/:id", (req, res) => { // 남의 정보 가져오기 ex) /api/user/3
@@ -38,8 +39,24 @@ router.get("/:id", (req, res) => { // 남의 정보 가져오기 ex) /api/user/3
 router.post("/logout", (req, res) => {
 
 });
-router.post("/login", (req, res) => {
-
+router.post("/login", (req, res, next) => { // POST /api/user/login
+    passport.authenticate('local', (err, user, info) => { // err,user,info -> done의 3가지 인자들
+        if (err) { // 서버 상 에러
+            console.error(err);
+            return next(err); 
+        }
+        if (info) { // 로직 상 에러
+            return res.status(401).send(info.reason);
+        }
+        return req.login(user, (loginErr) => {
+            if (loginErr) {
+                return next(loginErr);
+            }
+            const filteredUser = object.assign({}, user);  // 객체 참조복사 후 
+            delete filteredUser.password; // 비밀번호는 제외하고 
+            return res.json(user); // user 정보를 json 형태로 보낸다
+        })
+    })(req, res, next);
 });
 router.get("/:id/follow", (req, res) => {
 
