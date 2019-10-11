@@ -22,10 +22,10 @@ const PostForm = () => {
     dispatch({
       type: ADD_POST_REQUEST,
       data: {
-        text,
+        content: text,
       }
     });
-  }, []);
+  }, [text]); // state 넣는거 잊지말자
 
   const onChangeText = useCallback(e => {
     setText(e.target.value);

@@ -4,8 +4,10 @@ import {
   put,
   delay,
   takeLatest,
-  takeEvery
+  takeEvery,
+  call,
 } from "redux-saga/effects";
+import axios from 'axios';
 import {
   ADD_POST_REQUEST,
   ADD_POST_SUCCESS,
@@ -15,18 +17,23 @@ import {
   ADD_COMMENT_FAILURE
 } from "../reducers/post";
 
-function* addPostAPI() {}
+function* addPostAPI(postData) {
+  return axios.post("/post", postData, {
+    withCredentials: true, // 로그인한 사용자만 가능하게 쿠키
+  });
+}
 
-function* addPost() {
+function* addPost(action) {
   try {
-    yield delay(2000);
+    const result = yield call(addPostAPI, action.data)
     yield put({
-      type: ADD_POST_SUCCESS
+      type: ADD_POST_SUCCESS,
+      data: result.data,
     });
   } catch (e) {
     yield put({
       type: ADD_POST_FAILURE,
-      error: e
+      error: e,
     });
   }
 }

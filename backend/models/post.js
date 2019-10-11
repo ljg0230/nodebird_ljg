@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Post = sequelize.define(
     "Post", // 테이블명은 posts
     {
-      constent: {
+      content: {
         type: DataTypes.TEXT, // 매우 긴 글
         allowNull: false
       }
@@ -17,12 +17,12 @@ module.exports = (sequelize, DataTypes) => {
   Post.associate = db => {
     // 이 부분은 다른 테이블과 관계를 이어주기 위한 부분
     db.Post.belongsTo(db.User); // Post 테이블에 UserId 저장
-    db.Post.hasMany(db.Commnet);
+    db.Post.hasMany(db.Comment);
     db.Post.hasMany(db.Image);
-    db.Post.belongsTo(db.Post, { as: "Retweet" }); // Retweet, 두 Post 의 구분을 위해 이름을 지어준다
+    db.Post.belongsTo(db.Post, { as: "Retweet" }); // Retweet, 두 Post 의 구분을 위해 이름을 지어준다 .. 테이블에는 RetweetId 라는 컬럼이 생김
     db.Post.belongsToMany(db.Hashtag, { through: "PostHashtag" }); // n:m 관계
     db.Post.belongsToMany(db.User, { through: "Like", as: "Liker" }); // n:m
-  };;
+  };
 
   return Post;
 };

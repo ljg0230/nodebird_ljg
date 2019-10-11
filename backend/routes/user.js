@@ -7,7 +7,12 @@ const router = express.Router();
 
 // 공통되는 '/api/user' 는 분리시켰다
 router.get("/", (req, res) => { // /api/user
-
+    if (!req.user){
+        return res.status(401).send('로그인이 필요합니다.')
+    }
+    const user = Object.assign({}, req.user.toJSON());
+    delete user.password;
+    res.json(req.user);
 });
 router.post("/", async(req, res, next) => { // POST /api/user 회원가입
     try {
@@ -36,8 +41,10 @@ router.post("/", async(req, res, next) => { // POST /api/user 회원가입
 router.get("/:id", (req, res) => { // 남의 정보 가져오기 ex) /api/user/3
 
 });
-router.post("/logout", (req, res) => {
-
+router.post("/logout", (req, res) => { // /api/user/logout
+    req.logout();
+    req.session.destroy();
+    res.send('logout 성공');
 });
 router.post("/login", (req, res, next) => { // POST /api/user/login
     passport.authenticate('local', (err, user, info) => { // err,user,info -> done의 3가지 인자들
@@ -48,14 +55,34 @@ router.post("/login", (req, res, next) => { // POST /api/user/login
         if (info) { // 로직 상 에러
             return res.status(401).send(info.reason);
         }
-        return req.login(user, (loginErr) => {
-            if (loginErr) {
-                return next(loginErr);
+        return req.login(user, async (loginErr) => {
+            try{
+                if (loginErr) {
+                    return next(loginErr);
+                }
+                const fullUser = await db.User.findOne({
+                    where: { id: user.id },
+                    include: [{
+                        model: db.Post,
+                        as: 'Posts',
+                        attributes: ['id'], // id 외의 정보는 보안상 X
+                    }, {
+                        model: db.User,
+                        as: 'Followings',
+                        attributes: ['id'],
+                    }, {
+                        model: db.User,
+                        as: 'Followers',
+                        attributes: ['id'],
+                    }],
+                    attributes: ['id', 'nickname', 'userId'],
+                });
+                console.log(fullUser);
+                return res.json(fullUser);
+            } catch (e) {
+                next(e);
             }
-            const filteredUser = object.assign({}, user);  // 객체 참조복사 후 
-            delete filteredUser.password; // 비밀번호는 제외하고 
-            return res.json(user); // user 정보를 json 형태로 보낸다
-        })
+        });
     })(req, res, next);
 });
 router.get("/:id/follow", (req, res) => {

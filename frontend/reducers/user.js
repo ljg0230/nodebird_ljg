@@ -7,7 +7,6 @@ const dummyUser = {
 };
 
 export const initialState = {
-  isLoggedIn: false, // 로그인 여부
   isLoggingOut: false, // 로그아웃 시도중
   isLoggingIn: false, //로그인 시도중
   logInErrorReason: '', //로그인 에러 사유
@@ -89,8 +88,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggingIn: false,
-        isLoggedIn: true,
-        me: dummyUser,
+        me: action.data,
         isLoading: false
       };
     }
@@ -98,7 +96,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggingIn: false,
-        isLoggedIn: false,
         me: null,
         logInErrorReason: action.error
       };
@@ -106,7 +103,13 @@ const reducer = (state = initialState, action) => {
     case LOG_OUT_REQUEST: {
       return {
         ...state,
-        isLoggedIn: false,
+        isLoggingOut: true
+      };
+    }
+    case LOG_OUT_SUCCESS: {
+      return {
+        ...state,
+        isLoggingOut: false,
         me: null
       };
     }
@@ -115,21 +118,37 @@ const reducer = (state = initialState, action) => {
         ...state,
         isSigningUp: true,
         isSignedUp: false,
-        signUpErrorReason: '',
+        signUpErrorReason: ""
       };
     }
     case SIGN_UP_SUCCESS: {
       return {
         ...state,
         isSigningUp: false,
-        isSignedUp: true,
+        isSignedUp: true
       };
     }
     case SIGN_UP_FAILURE: {
       return {
         ...state,
         isSigningUp: false,
-        signUpErrorReason: action.error,
+        signUpErrorReason: action.error
+      };
+    }
+    case LOAD_USER_REQUEST: {
+      return {
+        ...state,
+      };
+    }
+    case LOAD_USER_SUCCESS: {
+      return {
+        ...state,
+        me: action.data
+      };
+    }
+    case LOAD_USER_FAILURE: {
+      return {
+        ...state,
       };
     }
     default: {

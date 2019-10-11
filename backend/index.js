@@ -22,7 +22,12 @@ passportConfig();
 app.use(morgan('dev')); // 요청에 대한 로그를 남긴다
 app.use(express.json()); // json 데이터 처리
 app.use(express.urlencoded({ extended: true })); // form 으로 넘어온 데이터 처리
-app.use(cors()); // 다른 서버에서 요청이와도 처리가능하게(브라우저 access control allow origin 에러 해결)
+app.use(
+  cors({
+    origin: true, // 쿠키 교환 가능, 요청주소랑 같게
+    credentials: true // 쿠키 교환 가능
+  })
+); // 다른 서버에서 요청이와도 처리가능하게(브라우저 access control allow origin 에러 해결)
 app.use(cookieParser(process.env.COOKIE_SECRET)); // 쿠키 파싱 및 암호화
 app.use(expressSesion({
     resave: false, // 매번 새션 강제 저장
@@ -31,7 +36,8 @@ app.use(expressSesion({
     cookie: {
         httpOnly: true, // javascript 로 접근 불가 -> 해킹 방어
         secure: false, // https를 쓸 때 true 로 
-    }
+    },
+    name: 'leejg',
 })); 
 app.use(passport.initialize());
 app.use(passport.session()); // expressSession 아래에 있어야 함. 미들웨어간에 서로 의존관계가 있으므로 순서가 중요하다
