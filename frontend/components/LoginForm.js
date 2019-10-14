@@ -1,9 +1,9 @@
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
 import Link from "next/link";
 import { useInput } from "../pages/signup";
 import { Form, Input, Button } from "antd";
 import { useDispatch, useSelector } from 'react-redux';
-import { loginRequestAction, logoutRequestAction, LOG_IN_REQUEST } from "../reducers/user";
+import { LOG_IN_REQUEST } from "../reducers/user";
 
 const LoginForm = () => {
   const [id, onChangeId] = useInput("");

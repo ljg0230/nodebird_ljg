@@ -634,7 +634,7 @@ const Home = () => {
     __self: undefined
   }), mainPosts.map(c => {
     return __jsx(_components_PostCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      key: Math.random(),
+      key: c,
       post: c,
       __source: {
         fileName: _jsxFileName,

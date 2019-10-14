@@ -11,7 +11,7 @@ const Home = () => {
       <div>
         {me && <PostForm />}
         {mainPosts.map(c => {
-          return (<PostCard key={Math.random()} post={c} />);
+          return (<PostCard key={c} post={c} />);
         })}
       </div>
   );
