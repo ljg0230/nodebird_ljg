@@ -4,7 +4,8 @@ import {
   put,
   delay,
   takeLatest,
-  takeEvery
+  call,
+  takeEvery,
 } from "redux-saga/effects";
 import {
   ADD_POST_REQUEST,
@@ -14,14 +15,20 @@ import {
   ADD_COMMENT_SUCCESS,
   ADD_COMMENT_FAILURE
 } from "../reducers/post";
+import axios from "axios";
 
-function addPostAPI() {}
+function addPostAPI(postData) {
+  return axios.post('/post', postData, {
+    withCredentials: true,
+  })
+}
 
-function* addPost() {
+function* addPost(action) {
   try {
-    yield delay(2000);
+    const result = yield call(addPostAPI, action.data);
     yield put({
-      type: ADD_POST_SUCCESS
+      type: ADD_POST_SUCCESS,
+      data: result.data,
     });
   } catch (e) {
     yield put({

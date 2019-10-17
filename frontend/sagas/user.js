@@ -21,7 +21,7 @@ import {
 } from "../reducers/user";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3066/api";
+
 
 //#region api/watch/watch동작 이 세개의 함수가 하나의 사이클(패턴)을 이루게끔 만들자
 function logInAPI(loginData) {

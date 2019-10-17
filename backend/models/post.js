@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Post = sequelize.define(
     "Post", // 테이블명은 posts
     {
-      constent: {
+      content: {
         type: DataTypes.TEXT, // 매우 긴 글
         allowNull: false
       }
