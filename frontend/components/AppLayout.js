@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import LoginForm from "./LoginForm";
 import UserProfile from "./UserProfile";
 import PropTypes from "prop-types";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Menu, Input, Row, Col } from "antd";
+import { LOAD_USER_REQUEST } from "../reducers/user";
 
 const AppLayout = ({ children }) => {
-  const { isLoggedIn } = useSelector(state => state.user);
+  const { me } = useSelector(state => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {  // 사용자가 어느 페이지로 접속할지 모르기 때문에 공통 레이아웃에 작성
+    if (!me) {
+      dispatch({
+        type: LOAD_USER_REQUEST,
+      });
+    }
+  }, [])
+
   return (
     <div>
       <Menu mode="horizontal">
@@ -27,7 +38,7 @@ const AppLayout = ({ children }) => {
       </Menu>
       <Row gutter={8}>
         <Col xs={24} md={6}>
-          {isLoggedIn ? (
+          {me ? (
             <UserProfile />
           ) : (
             <LoginForm></LoginForm>

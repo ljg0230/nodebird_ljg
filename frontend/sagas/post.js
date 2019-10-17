@@ -15,7 +15,7 @@ import {
   ADD_COMMENT_FAILURE
 } from "../reducers/post";
 
-function* addPostAPI() {}
+function addPostAPI() {}
 
 function* addPost() {
   try {
@@ -35,7 +35,7 @@ function* watchAddPost() {
   yield takeLatest(ADD_POST_REQUEST, addPost);
 }
 
-function* addCommnetAPI() {}
+function addCommnetAPI() {}
 
 function* addCommnet(action) {
   //saga도 액션 데이터를 받을 수 있다 여기 액션 데이터는 PostCard 의 onSubmitComment 에서 보낸다
