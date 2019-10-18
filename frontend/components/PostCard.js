@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { Button, Card, Avatar, Icon, Form, Input, Comment, List } from "antd";
 import PropTypes from "prop-types";
+import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
 import { ADD_COMMENT_REQUEST } from "../reducers/post";
 
@@ -55,7 +56,14 @@ const PostCard = ({ post }) => {
         <Card.Meta
           avatar={<Avatar>{post.User.nickname[0]}</Avatar>}
           title={post.User.nickname}
-          description={post.content}
+          description={<div>{post.content.split(/(#[^\s]+)/g).map((v) => {   // 해시태그의 링크넣기 -> a tag가 아닌 next의 Link를 써야 spa 가 유지가 된다
+            if (v.match(/#[^\s]+/)) {
+              return (
+                <Link href="/hashtag" key={v}><a>{v}</a></Link>
+              );
+            }
+            return v;
+          })}</div>} 
         />
       </Card>
       {commentFormOpened && (

@@ -13,7 +13,10 @@ import {
   ADD_POST_FAILURE,
   ADD_COMMENT_REQUEST,
   ADD_COMMENT_SUCCESS,
-  ADD_COMMENT_FAILURE
+  ADD_COMMENT_FAILURE,
+  LOAD_MAIN_POSTS_REQUEST,
+  LOAD_MAIN_POSTS_SUCCESS,
+  LOAD_MAIN_POSTS_FAILURE,
 } from "../reducers/post";
 import axios from "axios";
 
@@ -42,6 +45,29 @@ function* watchAddPost() {
   yield takeLatest(ADD_POST_REQUEST, addPost);
 }
 
+function LoadMainPostsAPI() {
+  return axios.get("/posts"); // 로그인을 하지않은 사용자도 메인페이지 게시글을 보이게 
+}
+
+function* LoadMainPosts() {
+  try {
+    const result = yield call(LoadMainPostsAPI);
+    yield put({
+      type: LOAD_MAIN_POSTS_SUCCESS,
+      data: result.data,
+    });
+  } catch (e) {
+    yield put({
+      type: LOAD_MAIN_POSTS_FAILURE,
+      error: e,
+    });
+  }
+}
+
+function* watchLoadMainPosts() {
+  yield takeLatest(LOAD_MAIN_POSTS_REQUEST, LoadMainPosts);
+}
+
 function addCommnetAPI() {}
 
 function* addCommnet(action) {
@@ -67,5 +93,9 @@ function* watchAddCommnet() {
 }
 
 export default function* postSaga() {
-  yield all([fork(watchAddPost), fork(watchAddCommnet)]);
+  yield all([
+    fork(watchLoadMainPosts),
+    fork(watchAddPost),
+    fork(watchAddCommnet),
+  ]);
 }

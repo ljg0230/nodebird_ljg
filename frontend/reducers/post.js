@@ -40,9 +40,9 @@ const dummyComment = {
   content: "Dummy Comment!"
 };
 
-export const LOAD_MAIN_POST_REQUEST = "LOAD_MAIN_POST_REQUEST";
-export const LOAD_MAIN_POST_SUCCESS = "LOAD_MAIN_POST_SUCCESS";
-export const LOAD_MAIN_POST_FAILURE = "LOAD_MAIN_POST_FAILURE";
+export const LOAD_MAIN_POSTS_REQUEST = "LOAD_MAIN_POSTS_REQUEST";
+export const LOAD_MAIN_POSTS_SUCCESS = "LOAD_MAIN_POSTS_SUCCESS";
+export const LOAD_MAIN_POSTS_FAILURE = "LOAD_MAIN_POSTS_FAILURE";
 
 export const LOAD_HASHTAG_REQUEST = "LOAD_HASHTAG_REQUEST";
 export const LOAD_HASHTAG_SUCCESS = "LOAD_HASHTAG_SUCCESS";
@@ -139,6 +139,23 @@ const reducer = (state = initialState, action) => {
         ...state,
         isAddingComment: false,
         addCommentErrorReason: action.error
+      };
+    }
+    case LOAD_MAIN_POSTS_REQUEST: {
+      return {
+        ...state,
+        mainPosts: [],
+      };
+    }
+    case LOAD_MAIN_POSTS_SUCCESS: {
+      return {
+        ...state,
+        mainPosts: action.data,
+      }
+    }
+    case LOAD_MAIN_POSTS_FAILURE: {
+      return {
+        ...state,
       };
     }
     default: {
