@@ -17,6 +17,12 @@ import {
   LOAD_MAIN_POSTS_REQUEST,
   LOAD_MAIN_POSTS_SUCCESS,
   LOAD_MAIN_POSTS_FAILURE,
+  LOAD_HASHTAG_REQUEST,
+  LOAD_HASHTAG_SUCCESS,
+  LOAD_HASHTAG_FAILURE,
+  LOAD_USER_POSTS_REQUEST,
+  LOAD_USER_POSTS_SUCCESS,
+  LOAD_USER_POSTS_FAILURE,
 } from "../reducers/post";
 import axios from "axios";
 
@@ -68,6 +74,52 @@ function* watchLoadMainPosts() {
   yield takeLatest(LOAD_MAIN_POSTS_REQUEST, LoadMainPosts);
 }
 
+function LoadUserPostsAPI(id) {
+  return axios.get(`/user/${id}/posts`); // 로그인을 하지않은 사용자도 메인페이지 게시글을 보이게
+}
+
+function* LoadUserPosts(action) {
+  try {
+    const result = yield call(LoadUserPostsAPI, action.data);
+    yield put({
+      type: LOAD_USER_POSTS_SUCCESS,
+      data: result.data,
+    });
+  } catch (e) {
+    yield put({
+      type: LOAD_USER_POSTS_FAILURE,
+      error: e,
+    });
+  }
+}
+
+function* watchLoadUserPosts() {
+  yield takeLatest(LOAD_USER_POSTS_REQUEST, LoadUserPosts);
+}
+
+function LoadHashtagPostsAPI(tag) {
+  return axios.get(`/hashtag/${tag}`); // 로그인을 하지않은 사용자도 메인페이지 게시글을 보이게
+}
+
+function* LoadHashtagPosts(action) {
+  try {
+    const result = yield call(LoadHashtagPostsAPI, action.data);
+    yield put({
+      type: LOAD_HASHTAG_SUCCESS,
+      data: result.data,
+    });
+  } catch (e) {
+    yield put({
+      type: LOAD_HASHTAG_FAILURE,
+      error: e,
+    });
+  }
+}
+
+function* watchLoadHashtagPosts() {
+  yield takeLatest(LOAD_HASHTAG_REQUEST, LoadHashtagPosts);
+}
+
 function addCommnetAPI() {}
 
 function* addCommnet(action) {
@@ -97,5 +149,7 @@ export default function* postSaga() {
     fork(watchLoadMainPosts),
     fork(watchAddPost),
     fork(watchAddCommnet),
+    fork(watchLoadHashtagPosts),
+    fork(watchLoadUserPosts),
   ]);
 }

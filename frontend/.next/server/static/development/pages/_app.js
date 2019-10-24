@@ -115,7 +115,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\components\\AppLayout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -141,126 +140,36 @@ const AppLayout = ({
       });
     }
   }, []);
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Menu"], {
-    mode: "horizontal",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: undefined
+  return __jsx("div", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Menu"], {
+    mode: "horizontal"
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
-    key: "home",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: undefined
+    key: "home"
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: undefined
-  }, "\uB178\uB4DC\uBC84\uB4DC"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
-    key: "profile",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
+    href: "/"
+  }, __jsx("a", null, "\uB178\uB4DC\uBC84\uB4DC"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+    key: "profile"
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/profile",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: undefined
-  }, "\uD504\uB85C\uD544"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
-    key: "mail",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: undefined
+    href: "/profile"
+  }, __jsx("a", null, "\uD504\uB85C\uD544"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Menu"].Item, {
+    key: "mail"
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Input"].Search, {
     enterButton: true,
     style: {
       verticalAlign: "middle"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: undefined
+    }
   }))), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Row"], {
-    gutter: 8,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
+    gutter: 8
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Col"], {
     xs: 24,
-    md: 6,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
-  }, me ? __jsx(_UserProfile__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: undefined
-  }) : __jsx(_LoginForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  })), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+    md: 6
+  }, me ? __jsx(_UserProfile__WEBPACK_IMPORTED_MODULE_3__["default"], null) : __jsx(_LoginForm__WEBPACK_IMPORTED_MODULE_2__["default"], null)), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Col"], {
     xs: 24,
-    md: 12,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: undefined
+    md: 12
   }, children), __jsx(antd__WEBPACK_IMPORTED_MODULE_6__["Col"], {
     xs: 24,
-    md: 6,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
+    md: 6
   }, __jsx("a", {
-    target: "_blank",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: undefined
+    target: "_blank"
   }, "Made by LeeJungGeol"))));
 };
 
@@ -290,7 +199,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\components\\LoginForm.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -320,109 +228,33 @@ const LoginForm = () => {
     onSubmit: onSubmitForm,
     style: {
       padding: '10px'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: undefined
-  }, __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-id",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: undefined
-  }, "\uC544\uC774\uB514"), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
+    }
+  }, __jsx("div", null, __jsx("label", {
+    htmlFor: "user-id"
+  }, "\uC544\uC774\uB514"), __jsx("br", null), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
     name: "user-id",
     value: id,
     onChange: onChangeId,
-    required: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
-  })), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-password",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: undefined
-  }, "\uBE44\uBC00\uBC88\uD638"), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
+    required: true
+  })), __jsx("div", null, __jsx("label", {
+    htmlFor: "user-password"
+  }, "\uBE44\uBC00\uBC88\uD638"), __jsx("br", null), __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Input"], {
     name: "user-password",
     type: "password",
     value: password,
     onChange: onChangePassword,
-    required: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: undefined
+    required: true
   })), __jsx("div", {
     style: {
       marginTop: '10px'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: undefined
+    }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Button"], {
     type: "primary",
     htmlType: "submit",
-    loading: isLoggingIn,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
+    loading: isLoggingIn
   }, "\uB85C\uADF8\uC778"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/signup",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  }, __jsx("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
-  }, "\uD68C\uC6D0\uAC00\uC785")))));
+    href: "/signup"
+  }, __jsx("a", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_3__["Button"], null, "\uD68C\uC6D0\uAC00\uC785")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (LoginForm);
@@ -445,7 +277,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
-var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\components\\UserProfile.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -463,74 +294,20 @@ const UserProfile = () => {
   }, []);
   return __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Card"], {
     actions: [__jsx("div", {
-      key: "twit",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17
-      },
-      __self: undefined
-    }, "\uC9F9\uC9F9!", __jsx("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: undefined
-    }), me.Posts.length), __jsx("div", {
-      key: "following",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: undefined
-    }, "\uD314\uB85C\uC789", __jsx("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: undefined
-    }), me.Followings.length), __jsx("div", {
-      key: "follower",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 27
-      },
-      __self: undefined
-    }, "\uD314\uB85C\uC6CC", __jsx("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: undefined
-    }), me.Followers.length)],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: undefined
+      key: "twit"
+    }, "\uC9F9\uC9F9!", __jsx("br", null), me.Posts.length), __jsx("div", {
+      key: "following"
+    }, "\uD314\uB85C\uC789", __jsx("br", null), me.Followings.length), __jsx("div", {
+      key: "follower"
+    }, "\uD314\uB85C\uC6CC", __jsx("br", null), me.Followers.length)]
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Card"].Meta, {
-    avatar: __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Avatar"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: undefined
-    }, me.nickname[0]),
-    title: me.nickname,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: undefined
+    avatar: __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Avatar"], null, me.nickname[0]),
+    title: me.nickname
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     style: {
       margin: '20px -10px 0'
     },
-    onClick: onLogout,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: undefined
+    onClick: onLogout
   }, "\uB85C\uADF8\uC544\uC6C3"));
 };
 
@@ -2344,7 +2121,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AppLayout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/AppLayout */ "./components/AppLayout.js");
 /* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
 /* harmony import */ var _sagas__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../sagas */ "./sagas/index.js");
-var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\pages\\_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2359,53 +2135,39 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const NodeBird = ({
   Component,
-  store
+  store,
+  pageProps
 }) => {
   return __jsx(react_redux__WEBPACK_IMPORTED_MODULE_4__["Provider"], {
-    store: store,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: undefined
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: undefined
-  }, __jsx("title", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: undefined
-  }, "NodeBird"), __jsx("link", {
+    store: store
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, null, __jsx("title", null, "NodeBird"), __jsx("link", {
     rel: "stylesheet",
-    href: "https://cdnjs.cloudflare.com/ajax/libs/antd/3.23.3/antd.css",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  })), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: undefined
-  }, __jsx(Component, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: undefined
-  })));
+    href: "https://cdnjs.cloudflare.com/ajax/libs/antd/3.23.3/antd.css"
+  })), __jsx(_components_AppLayout__WEBPACK_IMPORTED_MODULE_7__["default"], null, __jsx(Component, pageProps)));
 };
 
 NodeBird.propTypes = {
   Component: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.elementType.isRequired,
-  store: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired
+  store: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired,
+  pageProps: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired
+};
+
+NodeBird.getInitialProps = async context => {
+  // next가 실행해주면서 context를 넣어준다
+  console.log(context);
+  const {
+    ctx,
+    Component
+  } = context;
+  let pageProps = {};
+
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+
+  return {
+    pageProps
+  };
 };
 
 const configureStore = (initialState, options) => {
@@ -2446,7 +2208,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\pages\\signup.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2458,13 +2219,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const TextInput = ({
   value
 }) => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: undefined
-  }, value);
+  return __jsx("div", null, value);
 };
 
 TextInput.propTypes = {
@@ -2543,181 +2298,57 @@ const Signup = () => {
     onSubmit: onSubmit,
     style: {
       padding: 10
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 79
-    },
-    __self: undefined
-  }, __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-id",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81
-    },
-    __self: undefined
-  }, "\uC544\uC774\uB514"), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82
-    },
-    __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    }
+  }, __jsx("div", null, __jsx("label", {
+    htmlFor: "user-id"
+  }, "\uC544\uC774\uB514"), __jsx("br", null), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
     name: "user-id",
     value: id,
     required: true,
-    onChange: onChangeId,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: undefined
-  })), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 85
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-nick",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86
-    },
-    __self: undefined
-  }, "\uB2C9\uB124\uC784"), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87
-    },
-    __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    onChange: onChangeId
+  })), __jsx("div", null, __jsx("label", {
+    htmlFor: "user-nick"
+  }, "\uB2C9\uB124\uC784"), __jsx("br", null), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
     name: "user-nick",
     value: nick,
     required: true,
-    onChange: onChangeNick,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88
-    },
-    __self: undefined
-  })), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-pass",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 96
-    },
-    __self: undefined
-  }, "\uBE44\uBC00\uBC88\uD638"), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 97
-    },
-    __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    onChange: onChangeNick
+  })), __jsx("div", null, __jsx("label", {
+    htmlFor: "user-pass"
+  }, "\uBE44\uBC00\uBC88\uD638"), __jsx("br", null), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
     name: "user-pass",
     type: "password",
     value: password,
     required: true,
-    onChange: onChangePassword,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 98
-    },
-    __self: undefined
-  })), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 106
-    },
-    __self: undefined
-  }, __jsx("label", {
-    htmlFor: "user-pass-chk",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 107
-    },
-    __self: undefined
-  }, "\uBE44\uBC00\uBC88\uD638\uCCB4\uD06C"), __jsx("br", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 108
-    },
-    __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    onChange: onChangePassword
+  })), __jsx("div", null, __jsx("label", {
+    htmlFor: "user-pass-chk"
+  }, "\uBE44\uBC00\uBC88\uD638\uCCB4\uD06C"), __jsx("br", null), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
     name: "user-pass-chk",
     type: "password",
     value: passwordCheck,
     required: true,
-    onChange: onChangePasswordCheck,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: undefined
+    onChange: onChangePasswordCheck
   }), passwordError && __jsx("div", {
     style: {
       color: "red"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 117
-    },
-    __self: undefined
-  }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 120
-    },
-    __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Checkbox"], {
+    }
+  }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), __jsx("div", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Checkbox"], {
     name: "user-term",
     value: term,
-    onChange: onChangeTerm,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 121
-    },
-    __self: undefined
+    onChange: onChangeTerm
   }, "\uC5F4\uC2EC\uD788 \uD560 \uAC70\uC57C?"), termError && __jsx("div", {
     style: {
       color: "red"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 125
-    },
-    __self: undefined
+    }
   }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758\uD558\uC154\uC57C \uD569\uB2C8\uB2E4.")), __jsx("div", {
     style: {
       marginTop: 10
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 128
-    },
-    __self: undefined
+    }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     type: "primary",
     loading: isSigningUp,
-    htmlType: "submit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 129
-    },
-    __self: undefined
+    htmlType: "submit"
   }, "\uAC00\uC785\uD558\uAE30"))));
 };
 
@@ -2796,16 +2427,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 
 const initialState = {
-  mainPosts: [{
-    id: 1,
-    User: {
-      id: 1,
-      nickname: "이정걸"
-    },
-    content: "첫 번째 게시글",
-    img: "",
-    Comments: []
-  }],
+  mainPosts: [],
   // 화면에 보일 포스트들
   imagePaths: [],
   // 미리보기 이미지 경로
@@ -2818,15 +2440,6 @@ const initialState = {
   isAddingComment: false,
   addCommentErrorReason: "",
   commentAdded: false
-};
-const dummyPost = {
-  id: 2,
-  User: {
-    id: 1,
-    nickname: "이정걸"
-  },
-  content: "Im dummy!",
-  Comments: []
 };
 const dummyComment = {
   id: 1,
@@ -2913,7 +2526,7 @@ const reducer = (state = initialState, action) => {
       {
         const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId);
         const post = state.mainPosts[postIndex];
-        const Comments = [...post.Comments, dummyComment];
+        const Comments = [...post.Comments, action.data.comment];
         const mainPosts = [...state.mainPosts];
         mainPosts[postIndex] = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, post, {
           Comments
@@ -2934,6 +2547,8 @@ const reducer = (state = initialState, action) => {
       }
 
     case LOAD_MAIN_POSTS_REQUEST:
+    case LOAD_HASHTAG_REQUEST:
+    case LOAD_USER_POSTS_REQUEST:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           mainPosts: []
@@ -2941,6 +2556,8 @@ const reducer = (state = initialState, action) => {
       }
 
     case LOAD_MAIN_POSTS_SUCCESS:
+    case LOAD_HASHTAG_SUCCESS:
+    case LOAD_USER_POSTS_SUCCESS:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           mainPosts: action.data
@@ -2948,6 +2565,8 @@ const reducer = (state = initialState, action) => {
       }
 
     case LOAD_MAIN_POSTS_FAILURE:
+    case LOAD_HASHTAG_FAILURE:
+    case LOAD_USER_POSTS_FAILURE:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
       }
@@ -3152,8 +2771,14 @@ const reducer = (state = initialState, action) => {
 
     case LOAD_USER_SUCCESS:
       {
+        if (action.me) {
+          return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+            me: action.data
+          });
+        }
+
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
-          me: action.data
+          userInfo: action.data
         });
       }
 
@@ -3269,6 +2894,52 @@ function* watchLoadMainPosts() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_1__["LOAD_MAIN_POSTS_REQUEST"], LoadMainPosts);
 }
 
+function LoadUserPostsAPI(id) {
+  return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(`/user/${id}/posts`); // 로그인을 하지않은 사용자도 메인페이지 게시글을 보이게
+}
+
+function* LoadUserPosts(action) {
+  try {
+    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(LoadUserPostsAPI, action.data);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["LOAD_USER_POSTS_SUCCESS"],
+      data: result.data
+    });
+  } catch (e) {
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["LOAD_USER_POSTS_FAILURE"],
+      error: e
+    });
+  }
+}
+
+function* watchLoadUserPosts() {
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_1__["LOAD_USER_POSTS_REQUEST"], LoadUserPosts);
+}
+
+function LoadHashtagPostsAPI(tag) {
+  return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(`/hashtag/${tag}`); // 로그인을 하지않은 사용자도 메인페이지 게시글을 보이게
+}
+
+function* LoadHashtagPosts(action) {
+  try {
+    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(LoadHashtagPostsAPI, action.data);
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["LOAD_HASHTAG_SUCCESS"],
+      data: result.data
+    });
+  } catch (e) {
+    yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_1__["LOAD_HASHTAG_FAILURE"],
+      error: e
+    });
+  }
+}
+
+function* watchLoadHashtagPosts() {
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_1__["LOAD_HASHTAG_REQUEST"], LoadHashtagPosts);
+}
+
 function addCommnetAPI() {}
 
 function* addCommnet(action) {
@@ -3294,7 +2965,7 @@ function* watchAddCommnet() {
 }
 
 function* postSaga() {
-  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchLoadMainPosts), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddPost), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddCommnet)]);
+  yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchLoadMainPosts), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddPost), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchAddCommnet), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchLoadHashtagPosts), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["fork"])(watchLoadUserPosts)]);
 }
 
 /***/ }),
@@ -3403,21 +3074,24 @@ function* watchLogOut() {
   yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["takeEvery"])(_reducers_user__WEBPACK_IMPORTED_MODULE_1__["LOG_OUT_REQUEST"], logOut);
 }
 
-function loadUserAPI() {
-  return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/user/", {
+function loadUserAPI(userId) {
+  // 남의 정보가 없으면 내 정보 불러오기
+  return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(userId ? `/user/${userId}` : "/user/", {
     // get은 데이터를 받지 않으므로 2번째 인자에 바로 설정 인자
     withCredentials: true
   });
 }
 
-function* loadUser() {
+function* loadUser(action) {
   try {
-    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(loadUserAPI); // 함수 동기적 호출
+    const result = yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["call"])(loadUserAPI, action.data); // 함수 동기적 호출
 
     yield Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_0__["put"])({
       // put은 dispatch와 동일
       type: _reducers_user__WEBPACK_IMPORTED_MODULE_1__["LOAD_USER_SUCCESS"],
-      data: result.data // action.data 로 들어감
+      data: result.data,
+      // action.data 로 들어감
+      me: !action.data // userId가 없어야 내 정보를 불러온다
 
     });
   } catch (e) {

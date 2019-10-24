@@ -109,19 +109,20 @@ function* watchLogOut() {
   yield takeEvery(LOG_OUT_REQUEST, logOut);
 }
 
-function loadUserAPI() {
-  return axios.get("/user/", {  // get은 데이터를 받지 않으므로 2번째 인자에 바로 설정 인자
+function loadUserAPI(userId) { // 남의 정보가 없으면 내 정보 불러오기
+  return axios.get(userId ? `/user/${userId}` : "/user/", {  // get은 데이터를 받지 않으므로 2번째 인자에 바로 설정 인자
     withCredentials: true,
   });
 }
 
-function* loadUser() {
+function* loadUser(action) {
   try {
-    const result = yield call(loadUserAPI); // 함수 동기적 호출
+    const result = yield call(loadUserAPI, action.data); // 함수 동기적 호출
     yield put({
       // put은 dispatch와 동일
       type: LOAD_USER_SUCCESS,
       data: result.data, // action.data 로 들어감
+      me: !action.data, // userId가 없어야 내 정보를 불러온다
     });
   } catch (e) {
     console.error(e);

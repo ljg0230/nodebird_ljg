@@ -113,7 +113,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
-var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\components\\PostCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -159,181 +158,90 @@ const PostCard = ({
     });
   }, [me && me.id]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setCommentText('');
+    setCommentText("");
   }, [commentAdded === true]);
   const onChangeCommentText = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     setCommentText(e.target.value);
   }, []);
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+  return __jsx("div", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
     style: {
       marginTop: "10px"
     },
     key: +post.createdAt,
     cover: post.img && __jsx("img", {
       alt: "example",
-      src: post.img,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 47
-      },
-      __self: undefined
+      src: post.img
     }),
     actions: [__jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
       type: "retweet",
-      key: "retweet",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: undefined
+      key: "retweet"
     }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
       type: "heart",
-      key: "heart",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: undefined
+      key: "heart"
     }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
       type: "message",
       key: "message",
-      onClick: onToggleComment,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 51
-      },
-      __self: undefined
+      onClick: onToggleComment
     }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
       type: "ellipsis",
-      key: "ellipsis",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: undefined
+      key: "ellipsis"
     })],
-    extra: __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 54
-      },
-      __self: undefined
-    }, "\uD314\uB85C\uC6B0"),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: undefined
+    extra: __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], null, "\uD314\uB85C\uC6B0")
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"].Meta, {
-    avatar: __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 57
+    avatar: __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      href: {
+        pathname: "/user",
+        query: {
+          id: post.User.id
+        }
       },
-      __self: undefined
-    }, post.User.nickname[0]),
+      as: `/user/${post.User.id}`
+    }, __jsx("a", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], null, post.User.nickname[0]))),
     title: post.User.nickname,
-    description: __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 59
-      },
-      __self: undefined
-    }, post.content.split(/(#[^\s]+)/g).map(v => {
+    description: __jsx("div", null, post.content.split(/(#[^\s]+)/g).map(v => {
       // 해시태그의 링크넣기 -> a tag가 아닌 next의 Link를 써야 spa 가 유지가 된다
       if (v.match(/#[^\s]+/)) {
         return __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-          href: "/hashtag",
-          key: v,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 62
+          href: {
+            pathname: "/hashtag",
+            query: {
+              tag: v.slice(1)
+            }
           },
-          __self: undefined
-        }, __jsx("a", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 62
-          },
-          __self: undefined
-        }, v));
+          as: `/hashtag/${v.slice(1)}`,
+          key: v
+        }, __jsx("a", null, v));
       }
 
       return v;
-    })),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    },
-    __self: undefined
+    }))
   })), commentFormOpened && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"], {
-    onSubmit: onSubmitComment,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 71
-    },
-    __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"].Item, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 72
-    },
-    __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
+    onSubmit: onSubmitComment
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"].Item, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
     rows: 4,
     value: commentText,
-    onChange: onChangeCommentText,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73
-    },
-    __self: undefined
+    onChange: onChangeCommentText
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     type: "primary",
     htmlType: "submit",
-    loading: isAddingComment,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 79
-    },
-    __self: undefined
+    loading: isAddingComment
   }, "\uC090\uC57D")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["List"], {
     header: `${post.Comments ? post.Comments.length : 0} 댓글`,
     itemLayout: "horizontal",
     dataSource: post.Comments || [],
-    renderItem: item => __jsx("li", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 88
-      },
-      __self: undefined
-    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Comment"], {
+    renderItem: item => __jsx("li", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Comment"], {
       author: item.User.nickname,
-      avatar: __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 91
+      avatar: __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        href: {
+          pathname: "/user",
+          query: {
+            id: item.User.id
+          }
         },
-        __self: undefined
-      }, item.User.nickname[0]),
-      content: item.content,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 89
-      },
-      __self: undefined
-    })),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: undefined
+        as: `/user/${item.User.id}`
+      }, __jsx("a", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], null, item.User.nickname[0]))),
+      content: item.content
+    }))
   })));
 };
 
@@ -365,7 +273,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
-var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\components\\PostForm.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -411,96 +318,36 @@ const PostForm = () => {
       margin: "20px 0 20px"
     },
     encType: "multipart/form-data",
-    onSubmit: onSubmitForm,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: undefined
+    onSubmit: onSubmitForm
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"].TextArea, {
     maxLength: 140,
     placeholder: "\uC5B4\uB5A4 \uC77C\uC774 \uC788\uC5C8\uB098\uC694?",
     value: text,
-    onChange: onChangeText,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
+    onChange: onChangeText
+  }), __jsx("div", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
     type: "file",
     multiple: true,
-    hidden: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: undefined
-  }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    hidden: true
+  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], null, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     type: "primary",
     style: {
       float: "right"
     },
     loading: isAddingPost,
-    htmlType: "submit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52
-    },
-    __self: undefined
-  }, "\uC9F9\uC9F9")), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: undefined
-  }, imagePaths.map(v => {
+    htmlType: "submit"
+  }, "\uC9F9\uC9F9")), __jsx("div", null, imagePaths.map(v => {
     __jsx("div", {
       key: v,
       style: {
         display: "inline-block"
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: undefined
+      }
     }, __jsx("img", {
       src: `http://localhost:3000/${v}`,
       style: {
         width: "200px"
       },
-      alt: v,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64
-      },
-      __self: undefined
-    }), __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 69
-      },
-      __self: undefined
-    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 70
-      },
-      __self: undefined
-    }, "\uC81C\uAC70")));
+      alt: v
+    }), __jsx("div", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], null, "\uC81C\uAC70")));
   })));
 };
 
@@ -2304,7 +2151,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PostForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/PostForm */ "./components/PostForm.js");
 /* harmony import */ var _components_PostCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/PostCard */ "./components/PostCard.js");
 /* harmony import */ var _reducers_post__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducers/post */ "./reducers/post.js");
-var _jsxFileName = "D:\\\uC774\uC815\uAC78\\web\\react_nodebird\\frontend\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2325,27 +2171,10 @@ const Home = () => {
       type: _reducers_post__WEBPACK_IMPORTED_MODULE_4__["LOAD_MAIN_POSTS_REQUEST"]
     });
   }, []);
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
-  }, me && __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
-  }), mainPosts.map(c => {
+  return __jsx("div", null, me && __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_2__["default"], null), mainPosts.map(c => {
     return __jsx(_components_PostCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
       key: Math.random(),
-      post: c,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: undefined
+      post: c
     });
   }));
 };
@@ -2401,16 +2230,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 
 const initialState = {
-  mainPosts: [{
-    id: 1,
-    User: {
-      id: 1,
-      nickname: "이정걸"
-    },
-    content: "첫 번째 게시글",
-    img: "",
-    Comments: []
-  }],
+  mainPosts: [],
   // 화면에 보일 포스트들
   imagePaths: [],
   // 미리보기 이미지 경로
@@ -2423,15 +2243,6 @@ const initialState = {
   isAddingComment: false,
   addCommentErrorReason: "",
   commentAdded: false
-};
-const dummyPost = {
-  id: 2,
-  User: {
-    id: 1,
-    nickname: "이정걸"
-  },
-  content: "Im dummy!",
-  Comments: []
 };
 const dummyComment = {
   id: 1,
@@ -2518,7 +2329,7 @@ const reducer = (state = initialState, action) => {
       {
         const postIndex = state.mainPosts.findIndex(v => v.id === action.data.postId);
         const post = state.mainPosts[postIndex];
-        const Comments = [...post.Comments, dummyComment];
+        const Comments = [...post.Comments, action.data.comment];
         const mainPosts = [...state.mainPosts];
         mainPosts[postIndex] = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, post, {
           Comments
@@ -2539,6 +2350,8 @@ const reducer = (state = initialState, action) => {
       }
 
     case LOAD_MAIN_POSTS_REQUEST:
+    case LOAD_HASHTAG_REQUEST:
+    case LOAD_USER_POSTS_REQUEST:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           mainPosts: []
@@ -2546,6 +2359,8 @@ const reducer = (state = initialState, action) => {
       }
 
     case LOAD_MAIN_POSTS_SUCCESS:
+    case LOAD_HASHTAG_SUCCESS:
+    case LOAD_USER_POSTS_SUCCESS:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           mainPosts: action.data
@@ -2553,6 +2368,8 @@ const reducer = (state = initialState, action) => {
       }
 
     case LOAD_MAIN_POSTS_FAILURE:
+    case LOAD_HASHTAG_FAILURE:
+    case LOAD_USER_POSTS_FAILURE:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
       }

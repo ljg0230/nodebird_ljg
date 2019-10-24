@@ -9,33 +9,34 @@ const PostCard = ({ post }) => {
   const [commentFormOpened, setCommentFormOpened] = useState(false);
   const [commentText, setCommentText] = useState("");
   const { me } = useSelector(state => state.user);
-  const { commentAdded, isAddingComment } = useSelector(
-    state => state.post
-  );
+  const { commentAdded, isAddingComment } = useSelector(state => state.post);
   const dispatch = useDispatch();
 
   const onToggleComment = useCallback(() => {
     setCommentFormOpened(prev => !prev); //열렸으면 닫고, 닫혔으면 열고..
   }, []);
 
-  const onSubmitComment = useCallback((e) => {
-    e.preventDefault();
-    if (!me) {
-      return alert("로그인이 필요합니다.");
-    }
-    return dispatch({
-      type: ADD_COMMENT_REQUEST,
-      data: {
-        postId: post.id,
+  const onSubmitComment = useCallback(
+    e => {
+      e.preventDefault();
+      if (!me) {
+        return alert("로그인이 필요합니다.");
       }
-    });
-  }, [me && me.id]);
+      return dispatch({
+        type: ADD_COMMENT_REQUEST,
+        data: {
+          postId: post.id
+        }
+      });
+    },
+    [me && me.id]
+  );
 
   useEffect(() => {
-    setCommentText('');
+    setCommentText("");
   }, [commentAdded === true]);
 
-  const onChangeCommentText = useCallback((e) => {
+  const onChangeCommentText = useCallback(e => {
     setCommentText(e.target.value);
   }, []);
 
@@ -54,16 +55,36 @@ const PostCard = ({ post }) => {
         extra={<Button>팔로우</Button>}
       >
         <Card.Meta
-          avatar={<Avatar>{post.User.nickname[0]}</Avatar>}
+          avatar={(
+            <Link href={{ pathname: "/user", query: { id: post.User.id } }} as={`/user/${post.User.id}`}>
+              <a>
+                <Avatar>{post.User.nickname[0]}</Avatar>
+              </a>
+            </Link>
+          )}
           title={post.User.nickname}
-          description={<div>{post.content.split(/(#[^\s]+)/g).map((v) => {   // 해시태그의 링크넣기 -> a tag가 아닌 next의 Link를 써야 spa 가 유지가 된다
-            if (v.match(/#[^\s]+/)) {
-              return (
-                <Link href="/hashtag" key={v}><a>{v}</a></Link>
-              );
-            }
-            return v;
-          })}</div>} 
+          description={
+            <div>
+              {post.content.split(/(#[^\s]+)/g).map(v => {
+                // 해시태그의 링크넣기 -> a tag가 아닌 next의 Link를 써야 spa 가 유지가 된다
+                if (v.match(/#[^\s]+/)) {
+                  return (
+                    <Link
+                      href={{
+                        pathname: "/hashtag",
+                        query: { tag: v.slice(1) }
+                      }}
+                      as={`/hashtag/${v.slice(1)}`}
+                      key={v}
+                    >
+                      <a>{v}</a>
+                    </Link>
+                  );
+                }
+                return v;
+              })}
+            </div>
+          }
         />
       </Card>
       {commentFormOpened && (
@@ -88,7 +109,16 @@ const PostCard = ({ post }) => {
               <li>
                 <Comment
                   author={item.User.nickname}
-                  avatar={<Avatar>{item.User.nickname[0]}</Avatar>}
+                  avatar={
+                    <Link
+                      href={{ pathname: "/user", query: { id: item.User.id } }}
+                      as={`/user/${item.User.id}`}
+                    >
+                      <a>
+                        <Avatar>{item.User.nickname[0]}</Avatar>
+                      </a>
+                    </Link>
+                  }
                   content={item.content}
                 />
               </li>
