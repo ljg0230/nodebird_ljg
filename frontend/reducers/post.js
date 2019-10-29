@@ -53,9 +53,9 @@ export const ADD_COMMENT_REQUEST = "ADD_COMMENT_REQUEST";
 export const ADD_COMMENT_SUCCESS = "ADD_COMMENT_SUCCESS";
 export const ADD_COMMENT_FAILURE = "ADD_COMMENT_FAILURE";
 
-export const LOAD_COMMENT_REQUEST = "LOAD_COMMENT_REQUEST";
-export const LOAD_COMMENT_SUCCESS = "LOAD_COMMENT_SUCCESS";
-export const LOAD_COMMENT_FAILURE = "LOAD_COMMENT_FAILURE";
+export const LOAD_COMMENTS_REQUEST = "LOAD_COMMENTS_REQUEST";
+export const LOAD_COMMENTS_SUCCESS = "LOAD_COMMENTS_SUCCESS";
+export const LOAD_COMMENTS_FAILURE = "LOAD_COMMENTS_FAILURE";
 
 export const RETWEET_REQUEST = "RETWEET_REQUEST";
 export const RETWEET_SUCCESS = "RETWEET_SUCCESS";
@@ -120,12 +120,22 @@ const reducer = (state = initialState, action) => {
         addCommentErrorReason: action.error
       };
     }
+    case LOAD_COMMENTS_SUCCESS: {
+      const postIndex = state.mainPosts.findIndex(
+        v => v.id === action.data.postId
+      );
+      const post = state.mainPosts[postIndex];
+      const Comments = action.data.comments;
+      const mainPosts = [...state.mainPosts];
+      mainPosts[postIndex] = { ...post, Comments };
+      return {};
+    }
     case LOAD_MAIN_POSTS_REQUEST:
     case LOAD_HASHTAG_REQUEST:
     case LOAD_USER_POSTS_REQUEST: {
       return {
         ...state,
-        mainPosts: [],
+        mainPosts: []
       };
     }
     case LOAD_MAIN_POSTS_SUCCESS:
@@ -133,14 +143,14 @@ const reducer = (state = initialState, action) => {
     case LOAD_USER_POSTS_SUCCESS: {
       return {
         ...state,
-        mainPosts: action.data,
+        mainPosts: action.data
       };
     }
     case LOAD_MAIN_POSTS_FAILURE:
     case LOAD_HASHTAG_FAILURE:
     case LOAD_USER_POSTS_FAILURE: {
       return {
-        ...state,
+        ...state
       };
     }
     default: {

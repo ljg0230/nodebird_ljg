@@ -9,9 +9,6 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   // /api/user/
-/*   if (!req.user) {
-    return res.status(401).send("로그인이 필요합니다.");
-  } */
   const user = Object.assign({}, req.user.toJSON());
   delete user.password;
   return res.json(user);
@@ -63,7 +60,7 @@ router.get("/:id", async (req, res, next) => { // 남의 정보 가져오기 ex)
       attributes: ["id", "nickname"]
     });
     const jsonUser = user.toJSON(); // front 로 보내기 전에 보내기 부적절한 정보는 처리해준다
-    jsonUser.Post = jsonUser.Post ? jsonUser.Post.length : 0;
+    jsonUser.Posts = jsonUser.Posts ? jsonUser.Posts.length : 0;
     jsonUser.Followings = jsonUser.Followings ? jsonUser.Followings.length : 0;
     jsonUser.Followers = jsonUser.Followers ? jsonUser.Followers.length : 0;
     res.json(jsonUser);

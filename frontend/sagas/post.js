@@ -23,6 +23,9 @@ import {
   LOAD_USER_POSTS_REQUEST,
   LOAD_USER_POSTS_SUCCESS,
   LOAD_USER_POSTS_FAILURE,
+  LOAD_COMMENTS_REQUEST,
+  LOAD_COMMENTS_SUCCESS,
+  LOAD_COMMENTS_FAILURE,
 } from "../reducers/post";
 import axios from "axios";
 
@@ -120,19 +123,25 @@ function* watchLoadHashtagPosts() {
   yield takeLatest(LOAD_HASHTAG_REQUEST, LoadHashtagPosts);
 }
 
-function addCommnetAPI() {}
+function addCommentAPI(data) { // data 안에 postId 와 comment 2개라서 이렇게 작성
+  return axios.post(`/post/${data.postId}/comment`, { content: data.content }, {
+    withCredentials: true,
+  });
+}
 
-function* addCommnet(action) {
+function* addComment(action) {
   //saga도 액션 데이터를 받을 수 있다 여기 액션 데이터는 PostCard 의 onSubmitComment 에서 보낸다
   try {
-    yield delay(2000);
+    const result = yield call(addCommentAPI, action.data);
     yield put({
       type: ADD_COMMENT_SUCCESS,
       data: {
         postId: action.data.postId,
+        comment: result.data,
       },
     });
   } catch (e) {
+    console.error(e);
     yield put({
       type: ADD_COMMENT_FAILURE,
       error: e,
@@ -140,15 +149,42 @@ function* addCommnet(action) {
   }
 }
 
-function* watchAddCommnet() {
-  yield takeLatest(ADD_COMMENT_REQUEST, addCommnet);
+function* watchAddComment() {
+  yield takeLatest(ADD_COMMENT_REQUEST, addComment);
+}
+
+function loadCommentsAPI(postId) { // data 안에 postId 하나라서 이렇게 작성
+  return axios.get(`/post/${postId}/comments`);
+}
+
+function* loadComments(action) {
+  try {
+    const result = yield call(loadCommentsAPI, action.data);
+    yield put({
+      type: LOAD_COMMENTS_SUCCESS,
+      data: {
+        postId: action.data,
+        comments: result.data
+      }
+    });
+  } catch (e) {
+    yield put({
+      type: LOAD_COMMENTS_FAILURE,
+      error: e
+    });
+  }
+}
+
+function* watchLoadComments() {
+  yield takeLatest(LOAD_COMMENTS_REQUEST, loadComments);
 }
 
 export default function* postSaga() {
   yield all([
     fork(watchLoadMainPosts),
     fork(watchAddPost),
-    fork(watchAddCommnet),
+    fork(watchAddComment),
+    fork(watchLoadComments),
     fork(watchLoadHashtagPosts),
     fork(watchLoadUserPosts),
   ]);

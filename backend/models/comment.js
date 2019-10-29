@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       content: {
         type: DataTypes.TEXT, 
         allowNull: false,
-      }
+      },
     },
     {
       charset: "utf8mb4", 
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Comment.associate = db => {
     db.Comment.belongsTo(db.User); 
-    db.Comment.belongsTo(db.Post);
+    db.Comment.belongsTo(db.Post); 
   };
 
   return Comment;
