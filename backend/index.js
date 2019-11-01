@@ -21,12 +21,13 @@ db.sequelize.sync();
 passportConfig();
 
 app.use(morgan('dev')); // 요청에 대한 로그를 남긴다
-app.use(express.json()); // json 데이터 처리
-app.use(express.urlencoded({ extended: true })); // form 으로 넘어온 데이터 처리
+app.use('/', express.static('uploads')); // static은 해당 경로의 파일들을 다른 서버에서 가져갈 수 있게 해준다, 앞의 주소는 front 에서 접근하는 주소를 의미. 변경 가능
 app.use(cors({
     origin: true, // 쿠키 교환.. 요청 주소와 같게
     credentials: true, // 쿠키 교환.. forntend의 cors 에서도 설정해줘야 한다
 })); // 다른 서버에서 요청이와도 처리가능하게(브라우저 access control allow origin 에러 해결)
+app.use(express.json()); // json 데이터 처리
+app.use(express.urlencoded({ extended: true })); // form 으로 넘어온 데이터 처리
 app.use(cookieParser(process.env.COOKIE_SECRET)); // 쿠키 파싱 및 암호화
 app.use(expressSesion({
     resave: false, // 매번 새션 강제 저장

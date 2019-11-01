@@ -1,7 +1,7 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Form, Input, Button } from "antd";
-import { ADD_POST_REQUEST } from "../reducers/post";
+import { ADD_POST_REQUEST, UPLOAD_IMAGES_REQUEST, REMOVE_IMAGE } from "../reducers/post";
 
 const PostForm = () => {
   const dispatch = useDispatch();
@@ -9,6 +9,7 @@ const PostForm = () => {
   const { imagePaths, isAddingPost, postAdded } = useSelector(
     state => state.post
   );
+  const imageInput = useRef();
 
   useEffect(() => {
     if (postAdded) {
@@ -34,6 +35,29 @@ const PostForm = () => {
     setText(e.target.value);
   }, []);
 
+  const onChangeImages = useCallback((e) => {
+    console.log(e.target.files);
+    const imageFormData = new FormData();
+    [].forEach.call(e.target.files, (f) => {
+      imageFormData.append('image', f);  // 첫번째인수(key) 이름으로 서버쪽에서 인식함. spa 유지를 위해 ajax 로 FormData 객체를 쓰고 일일이 이미지를 append 해준다
+    });
+    dispatch({
+      type: UPLOAD_IMAGES_REQUEST,
+      data: imageFormData,
+    });
+  }, []);
+
+  const onClickImageUpload = useCallback(() => {
+    imageInput.current.click();
+  }, [imageInput.current]);
+
+  const onRemoveImage = useCallback(index => () => {
+    dispatch({
+      type: REMOVE_IMAGE,
+      index,
+    });
+  }, []);
+
   return (
     <Form
       style={{ margin: "20px 0 20px" }}
@@ -47,8 +71,8 @@ const PostForm = () => {
         onChange={onChangeText}
       />
       <div>
-        <Input type="file" multiple hidden />
-        <Button>이미지 업로드</Button>
+        <input type="file" multiple hidden ref={imageInput} onChange={onChangeImages} />
+        <Button onClick={onClickImageUpload}>이미지 업로드</Button>
         <Button
           type="primary"
           style={{ float: "right" }}
@@ -59,18 +83,18 @@ const PostForm = () => {
         </Button>
       </div>
       <div>
-        {imagePaths.map(v => {
+        {imagePaths.map((v, i) => (
           <div key={v} style={{ display: "inline-block" }}>
             <img
-              src={`http://localhost:3000/${v}`}
+              src={`http://localhost:3066/${v}`}
               style={{ width: "200px" }}
               alt={v}
             />
             <div>
-              <Button>제거</Button>
+              <Button onClick={onRemoveImage(i)}>제거</Button>
             </div>
-          </div>;
-        })}
+          </div>
+        ))}
       </div>
     </Form>
   );

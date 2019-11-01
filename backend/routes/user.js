@@ -1,13 +1,14 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
+const { isLoggedIn } = require("./middleware");
 const db = require("../models");
 
 const router = express.Router();
 
 // 공통되는 '/api/user' 는 분리시켰다
 
-router.get("/", (req, res) => {
+router.get("/", isLoggedIn, (req, res) => {
   // /api/user/
   const user = Object.assign({}, req.user.toJSON());
   delete user.password;

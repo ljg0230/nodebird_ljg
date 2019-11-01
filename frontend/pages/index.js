@@ -14,7 +14,7 @@ const Home = () => {
       type: LOAD_MAIN_POSTS_REQUEST
     });
   }, []);
-  
+
   return (
       <div>
         {me && <PostForm />}

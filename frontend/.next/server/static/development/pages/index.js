@@ -298,6 +298,7 @@ const PostForm = () => {
     isAddingPost,
     postAdded
   } = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.post);
+  const imageInput = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     if (postAdded) {
       setText("");
@@ -321,6 +322,26 @@ const PostForm = () => {
   const onChangeText = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
     setText(e.target.value);
   }, []);
+  const onChangeImages = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    console.log(e.target.files);
+    const imageFormData = new FormData();
+    [].forEach.call(e.target.files, f => {
+      imageFormData.append('image', f); // 첫번째인수(key) 이름으로 서버쪽에서 인식함. spa 유지를 위해 ajax 로 FormData 객체를 쓰고 일일이 이미지를 append 해준다
+    });
+    dispatch({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["UPLOAD_IMAGES_REQUEST"],
+      data: imageFormData
+    });
+  }, []);
+  const onClickImageUpload = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(() => {
+    imageInput.current.click();
+  }, [imageInput.current]);
+  const onRemoveImage = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(index => () => {
+    dispatch({
+      type: _reducers_post__WEBPACK_IMPORTED_MODULE_3__["REMOVE_IMAGE"],
+      index
+    });
+  }, []);
   return __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Form"], {
     style: {
       margin: "20px 0 20px"
@@ -332,31 +353,35 @@ const PostForm = () => {
     placeholder: "\uC5B4\uB5A4 \uC77C\uC774 \uC788\uC5C8\uB098\uC694?",
     value: text,
     onChange: onChangeText
-  }), __jsx("div", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
+  }), __jsx("div", null, __jsx("input", {
     type: "file",
     multiple: true,
-    hidden: true
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], null, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    hidden: true,
+    ref: imageInput,
+    onChange: onChangeImages
+  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    onClick: onClickImageUpload
+  }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     type: "primary",
     style: {
       float: "right"
     },
     loading: isAddingPost,
     htmlType: "submit"
-  }, "\uC9F9\uC9F9")), __jsx("div", null, imagePaths.map(v => {
-    __jsx("div", {
-      key: v,
-      style: {
-        display: "inline-block"
-      }
-    }, __jsx("img", {
-      src: `http://localhost:3000/${v}`,
-      style: {
-        width: "200px"
-      },
-      alt: v
-    }), __jsx("div", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], null, "\uC81C\uAC70")));
-  })));
+  }, "\uC9F9\uC9F9")), __jsx("div", null, imagePaths.map((v, i) => __jsx("div", {
+    key: v,
+    style: {
+      display: "inline-block"
+    }
+  }, __jsx("img", {
+    src: `http://localhost:3066/${v}`,
+    style: {
+      width: "200px"
+    },
+    alt: v
+  }), __jsx("div", null, __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    onClick: onRemoveImage(i)
+  }, "\uC81C\uAC70"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PostForm);
@@ -2298,6 +2323,30 @@ const REMOVE_POST_FAILURE = "REMOVE_POST_FAILURE";
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case UPLOAD_IMAGES_REQUEST:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
+      }
+
+    case UPLOAD_IMAGES_SUCCESS:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          imagePaths: [...state.imagePaths, ...action.data]
+        });
+      }
+
+    case UPLOAD_IMAGES_FAILURE:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
+      }
+
+    case REMOVE_IMAGE:
+      {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          imagePaths: state.imagePaths.filter((v, i) => i !== action.index)
+        });
+      }
+
     case ADD_POST_REQUEST:
       {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
@@ -2366,7 +2415,9 @@ const reducer = (state = initialState, action) => {
         mainPosts[postIndex] = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, post, {
           Comments
         });
-        return {};
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+          mainPosts
+        });
       }
 
     case LOAD_MAIN_POSTS_REQUEST:
