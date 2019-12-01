@@ -131,12 +131,21 @@ router.get("/:id/posts", async (req, res, next) => {
     const posts = await db.Post.findAll({
       where: {
         UserId: parseInt(req.params.id, 10),
-        RetweetId: null,
+        RetweetId: null
       },
       include: [
         {
           model: db.User,
           attributes: ["id", "nickname"]
+        },
+        {
+          model: db.Image
+        },
+        {
+          model: db.User,
+          through: "Like",
+          as: "Likers",
+          attributes: ["id"]
         }
       ]
     });
